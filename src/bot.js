@@ -141,5 +141,6 @@ client.on("messageCreate", async (message) => {
 		}
 	}
 });
-
-client.login(process.env.DISCORDJS_BOT_TOKEN);
+// const mySecret = process.env['DISCORDJS_BOT_TOKEN']
+// console.log(mySecret)
+client.login("OTEzMzUzMjk2MzIyOTA4MTcw.YZ9Qiw.NvExxAt15Cn5mgOiZHR2lQeerFU");
