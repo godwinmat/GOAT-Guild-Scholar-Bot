@@ -1,5 +1,5 @@
 async function scholarstats(roles, userObjs, message, users, convertAddress, addresses, MessageEmbed, axieInfinityApi) {
-    if (roles.includes("Admin") | roles.includes("Moderator")) {
+	if (roles.includes("Manager")) {
         let fields = [];
 		const data = [];
         const list = Object.values(addresses)

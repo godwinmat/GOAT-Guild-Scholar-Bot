@@ -7,7 +7,7 @@ async function slpleaderboard(
 	convertAddress,
 	userObjs
 ) {
-	if (roles.includes("Admin") | roles.includes("Moderator")) {
+	if (roles.includes("Manager")) {
 		let fields = [];
 		const data = [];
 		const list = Object.values(addresses)

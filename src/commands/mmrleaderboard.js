@@ -1,5 +1,5 @@
 async function mmrleaderboard(roles, MessageEmbed, message, addresses, axieInfinityApi, convertAddress, userObjs) {
-    if (roles.includes("Admin") | roles.includes("Moderator")) {
+	if (roles.includes("Manager")) {
         let fields = [];
 		const data = [];
 		const list = Object.values(addresses)

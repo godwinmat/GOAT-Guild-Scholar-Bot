@@ -1,5 +1,5 @@
 async function deleteronin(roles, args, client, users, ids, db, doc, deleteDoc, message, userObjs, addresses) {
-    if (roles.includes("Admin") | roles.includes("Moderator")) {
+	if (roles.includes("Manager")) {
         let [user] = args;
         if (user.includes("!")) {
             let [first, second] = user.split("!");

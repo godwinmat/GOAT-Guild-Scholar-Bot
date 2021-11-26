@@ -10,7 +10,7 @@ async function addronin(
 	users,
 	message
 ) {
-	if (roles.includes("Admin") | roles.includes("Moderator")) {
+	if (roles.includes("Manager")) {
 		let [user, address] = args;
 		if (user.includes("!")) {
 			let [first, second] = user.split("!");
