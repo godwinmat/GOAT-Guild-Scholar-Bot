@@ -12,7 +12,6 @@ const {
 const addronin = require("./commands/addronin");
 const deleteronin = require("./commands/deleteronin");
 const scholarstats = require("./commands/scholarstats");
-// const myslp = require("./commands/myslp");
 const mmrleaderboard = require("./commands/mmrleaderboard");
 const slpleaderboard = require("./commands/slpleaderboard");
 
@@ -122,7 +121,8 @@ client.on("messageCreate", async (message) => {
 					addresses,
 					axieInfinityApi,
 					convertAddress,
-					userObjs
+					userObjs,
+					users
 				);
 				break;
 			case "slpleaderboard":
@@ -133,12 +133,15 @@ client.on("messageCreate", async (message) => {
 					addresses,
 					axieInfinityApi,
 					convertAddress,
-					userObjs
+					userObjs,
+					users
 				);
 				break;
 			default:
+				message.reply("Invalid command");
 				break;
 		}
 	}
 });
+
 client.login(process.env.DISCORDJS_BOT_TOKEN);
