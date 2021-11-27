@@ -15,6 +15,7 @@ async function deleteronin(roles, args, client, users, ids, db, doc, deleteDoc, 
             delete ids[tag];
             delete addresses[tag];
             users = users.filter((user) => user !== tag);
+            console.log(users)
         } else {
             message.reply("User does not exists.");
         }
