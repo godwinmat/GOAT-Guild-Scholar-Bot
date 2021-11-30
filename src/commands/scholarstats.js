@@ -2,7 +2,7 @@ async function scholarstats(roles, userObjs, message, users, convertAddress, add
 	if (roles.includes("Manager")) {
         const list = Object.values(addresses)
 		if (list.length !== 0) {
-
+            
             let fields = [];
             const data = [];
             const embed = new MessageEmbed();
@@ -12,16 +12,17 @@ async function scholarstats(roles, userObjs, message, users, convertAddress, add
                 return axieInfinityApi(convertAddress(address));
             });
             const responses = await Promise.all(promises);
+            console.log(responses)
             
             for (let index = 0; index < responses.length; index++) {
                 data.push([userObjs[list[index]], {
                     yesterdayslp: responses[index].slp.yesterdaySLP,
+                    todayslp: responses[index].slp.todaySoFar,
                     average: responses[index].slp.average,
                     rank: responses[index].leaderboard.rank
                 }]);
             }
             
-            console.log(data)
             
             setTimeout(() => {
                 data.map((datum, index) => {
@@ -31,6 +32,9 @@ async function scholarstats(roles, userObjs, message, users, convertAddress, add
                     }, {
                         name: 'YESTERDAY SLP',
                         value: `${datum[1].yesterdayslp} SLP`
+                    }, {
+                        name: 'TODAY SLP',
+                        value: `${datum[1].todayslp} SLP`
                     }, {
                         name: 'AVERAGE SLP',
                         value: `${datum[1].average} SLP`
