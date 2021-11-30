@@ -12,7 +12,6 @@ async function scholarstats(roles, userObjs, message, users, convertAddress, add
                 return axieInfinityApi(convertAddress(address));
             });
             const responses = await Promise.all(promises);
-            console.log(responses)
             
             for (let index = 0; index < responses.length; index++) {
                 data.push([userObjs[list[index]], {
