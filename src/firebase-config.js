@@ -2,12 +2,12 @@ const { initializeApp } = require("firebase/app");
 const { getFirestore } = require("@firebase/firestore");
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCXzYie04M6ivh__eOllP7g896sU97gArs",
-  authDomain: "goat-guild-scholar-bot.firebaseapp.com",
-  projectId: "goat-guild-scholar-bot",
-  storageBucket: "goat-guild-scholar-bot.appspot.com",
-  messagingSenderId: "463762436286",
-  appId: "1:463762436286:web:eae43efd2fa9d82c636eef"
+  apiKey: "AIzaSyAyhXtqQuVD6sbYOuSGqp31QNtZBqUUG3o",
+  authDomain: "goat-bot-4d6b3.firebaseapp.com",
+  projectId: "goat-bot-4d6b3",
+  storageBucket: "goat-bot-4d6b3.appspot.com",
+  messagingSenderId: "587659836924",
+  appId: "1:587659836924:web:4aa1609020071d904b0679"
 };
 
 // Initialize Firebase
