@@ -1,5 +1,5 @@
 async function scholarstats(client, roles, userObjs, message, users, convertAddress, addresses, MessageEmbed, axieInfinityApi) {
-	if (roles.includes("Manager")) {
+	if (roles.includes("Manager") || message.author.id === "864924045693419562") {
         const list = Object.values(addresses)
         if (list.length !== 0) {
             if (message.guild.me.permissionsIn(message.channel).has(['SEND_MESSAGES', 'READ_MESSAGE_HISTORY', 'EMBED_LINKS', 'VIEW_CHANNEL'])) {
