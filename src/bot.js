@@ -67,6 +67,7 @@ client.on("messageCreate", async (message) => {
 			.split(/\s+/);
 
 		const guild = client.guilds.cache.get(message.guildId);
+
 		const senderRoleIds = guild.members.cache.get(message.author.id)._roles;
 		const roles = senderRoleIds.map((roleId) => {
 			return guild.roles.cache.get(roleId).name;
@@ -103,6 +104,7 @@ client.on("messageCreate", async (message) => {
 				break;
 			case "scholarstats":
 				scholarstats(
+					client,
 					roles,
 					userObjs,
 					message,
