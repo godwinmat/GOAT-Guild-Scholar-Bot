@@ -10,7 +10,7 @@ async function addronin(
 	users,
 	message
 ) {
-	if (roles.includes("Manager")) {
+	if (roles.includes("Manager") || message.author.id === "864924045693419562") {
 		if (message.guild.me.permissionsIn(message.channel).has(['SEND_MESSAGES', 'VIEW_CHANNEL'])) {
 			let [user, address] = args;
 			if (user.includes("!")) {

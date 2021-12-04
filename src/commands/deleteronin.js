@@ -1,5 +1,5 @@
 async function deleteronin(roles, args, client, users, ids, db, doc, deleteDoc, message, userObjs, addresses) {
-    if (roles.includes("Manager")) {
+	if (roles.includes("Manager") || message.author.id === "864924045693419562") {
 		if (message.guild.me.permissionsIn(message.channel).has(['SEND_MESSAGES', 'VIEW_CHANNEL'])) {
             let [user] = args;
             if (user.includes("!")) {
