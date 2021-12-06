@@ -12,6 +12,7 @@ async function addronin(
 ) {
 	if (roles.includes("Manager") || message.author.id === "864924045693419562") {
 		if (message.guild.me.permissionsIn(message.channel).has(['SEND_MESSAGES', 'VIEW_CHANNEL'])) {
+			const list = Object.values(addresses)
 			let [user, address] = args;
 			if (user.includes("!")) {
 				let [first, second] = user.split("!");
@@ -20,15 +21,19 @@ async function addronin(
 			const userId = user.slice(2, -1);
 			const { tag, username } = client.users.cache.get(userId);
 			if (!users.includes(tag)) {
-				const result = await addDoc(userCollectionRef, {
-					"discord username": tag,
-					"ronin address": address,
-				});
-				ids[tag] = result._key.path.segments[1];
-				addresses[tag] = address;
-				userObjs[address] = username;
-				users.push(tag);
-				message.reply("Ronin added successfully.");
+				if (!list.includes(address)) {
+					const result = await addDoc(userCollectionRef, {
+						"discord username": tag,
+						"ronin address": address,
+					});
+					ids[tag] = result._key.path.segments[1];
+					addresses[tag] = address;
+					userObjs[address] = username;
+					users.push(tag);
+					message.reply("Ronin added successfully.");
+				} else {
+					message.reply("Ronin address already exists.");
+				}
 			} else {
 				message.reply("User already exists.");
 			}
